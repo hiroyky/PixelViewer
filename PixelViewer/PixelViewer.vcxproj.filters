@@ -50,6 +50,9 @@
     <ClCompile Include="GeneratedFiles\qrc_mainwindow.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="ImageScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="mainwindow.h">
@@ -70,6 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ImageScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,10 +1,15 @@
+#ifndef __IMAGE_SCENE_H__
+#define __IMAGE_SCENE_H__
+
 #include <qgraphicsscene.h>
 
 class ImageScene : public QGraphicsScene {
 public:
-    ImageScene(qreal x, qreal y, qreal width, qreal height, QObject *parent = 0) 
-        : QGraphicsScene(x, y, width, height, parent) {}
+    ImageScene();
+    ImageScene(qreal x, qreal y, qreal width, qreal height, QObject *parent = 0);
 
 protected:
-    void paintEvent(QPaintEvent *event);
+   
 };
+
+#endif

@@ -12,9 +12,14 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+public slots:
+    void imageReferenceButtonClicked();
+
 private:
     Ui::MainWindowClass ui;
     ImageScene* scene;
+
+    void openImage(QString filename);
 };
 
 #endif // MAINWINDOW_H

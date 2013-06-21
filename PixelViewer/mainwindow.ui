@@ -199,5 +199,25 @@
  <resources>
   <include location="mainwindow.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>referenceButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>imageReferenceButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>342</x>
+     <y>636</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>726</x>
+     <y>-5</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>imageReferenceButtonClicked()</slot>
+ </slots>
 </ui>
