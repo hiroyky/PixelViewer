@@ -53,6 +53,9 @@
     <ClCompile Include="ImageScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ImageView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="mainwindow.h">
@@ -67,16 +70,14 @@
     <CustomBuild Include="GeneratedFiles\ui_mainwindow.h">
       <Filter>Generated Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="ImageScene.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ImageView.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="PixelViewer.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ImageScene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ImageView.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

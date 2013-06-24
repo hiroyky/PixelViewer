@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -27,6 +26,7 @@
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "imageview.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -39,7 +39,7 @@ public:
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QVBoxLayout *verticalLayout_3;
-    QGraphicsView *imageView;
+    ImageView *imageView;
     QGroupBox *groupBox;
     QGroupBox *groupBox_2;
     QHBoxLayout *horizontalLayout;
@@ -88,7 +88,7 @@ public:
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        imageView = new QGraphicsView(scrollAreaWidgetContents);
+        imageView = new ImageView(scrollAreaWidgetContents);
         imageView->setObjectName(QStringLiteral("imageView"));
         imageView->setEnabled(true);
         sizePolicy.setHeightForWidth(imageView->sizePolicy().hasHeightForWidth());
@@ -178,6 +178,7 @@ public:
 
         retranslateUi(MainWindowClass);
         QObject::connect(referenceButton, SIGNAL(clicked()), MainWindowClass, SLOT(imageReferenceButtonClicked()));
+        QObject::connect(openButton, SIGNAL(clicked()), MainWindowClass, SLOT(imageOpenButtonClicked()));
 
         QMetaObject::connectSlotsByName(MainWindowClass);
     } // setupUi

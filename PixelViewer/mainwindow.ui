@@ -54,7 +54,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QGraphicsView" name="imageView">
+           <widget class="ImageView" name="imageView">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -196,6 +196,13 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ImageView</class>
+   <extends>QGraphicsView</extends>
+   <header>imageview.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="mainwindow.qrc"/>
  </resources>
@@ -216,8 +223,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>openButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>imageOpenButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>642</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>426</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>imageReferenceButtonClicked()</slot>
+  <slot>imageOpenButtonClicked()</slot>
  </slots>
 </ui>
