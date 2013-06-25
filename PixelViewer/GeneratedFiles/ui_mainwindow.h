@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -48,6 +49,7 @@ public:
     QPushButton *referenceButton;
     QPushButton *openButton;
     QLabel *colorLabel;
+    QCheckBox *colorValuecheckBox;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -168,6 +170,9 @@ public:
         font.setWeight(75);
         colorLabel->setFont(font);
         colorLabel->setTextFormat(Qt::PlainText);
+        colorValuecheckBox = new QCheckBox(groupBox);
+        colorValuecheckBox->setObjectName(QStringLiteral("colorValuecheckBox"));
+        colorValuecheckBox->setGeometry(QRect(470, 10, 75, 16));
 
         verticalLayout->addWidget(groupBox);
 
@@ -202,6 +207,7 @@ public:
         referenceButton->setText(QApplication::translate("MainWindowClass", "\345\217\202\347\205\247", 0));
         openButton->setText(QApplication::translate("MainWindowClass", "\351\226\213\343\201\217", 0));
         colorLabel->setText(QApplication::translate("MainWindowClass", "TextLabel", 0));
+        colorValuecheckBox->setText(QApplication::translate("MainWindowClass", "CheckBox", 0));
     } // retranslateUi
 
 };

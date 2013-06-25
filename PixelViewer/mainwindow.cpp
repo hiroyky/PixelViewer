@@ -46,8 +46,8 @@ void MainWindow::openImage(QString filename) {
 }
 
 void MainWindow::onSceneMouseMoveEvent(QPointF position, QRgb rgb) {
-    QString str = QString::number((int)position.x()) + ","
-        + QString::number((int)position.y()) + "=" 
-        + QString::number(qRed(rgb));
-    ui.colorLabel->setText(str);
+    if(ui.colorValuecheckBox->isChecked()) {
+        QString str = QString::number(qGray(rgb));
+        ui.colorLabel->setText(str);
+    }
 }
