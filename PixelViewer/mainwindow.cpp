@@ -3,19 +3,20 @@
 #include <qgraphicsitem.h>
 #include <qmessagebox.h>
 #include <qfiledialog.h>
+#include <boost\bind.hpp>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent) {
-      
-    ui.setupUi(this);
 
-    scene = new ImageScene();
-    ui.imageView->setScene(scene);
-    ui.imageView->show();
+        ui.setupUi(this);
+
+        scene = new ImageScene();
+        scene->onMouseMoveEvent = boost::bind(&MainWindow::onSceneMouseMoveEvent, this, _1, _2);
+        ui.imageView->setScene(scene);
+        ui.imageView->show();
 }
 
-MainWindow::~MainWindow() {
-    delete scene;
+MainWindow::~MainWindow() {    
 }
 
 void MainWindow::imageReferenceButtonClicked() {
@@ -41,9 +42,12 @@ void MainWindow::openImage(QString filename) {
         messageBox.exec();
         return;
     }
+    scene->setImage(&image);  
+}
 
-    QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
-    scene->clear();        
-    scene->addItem(item);
-    scene->setSceneRect(scene->itemsBoundingRect());
+void MainWindow::onSceneMouseMoveEvent(QPointF position, QRgb rgb) {
+    QString str = QString::number((int)position.x()) + ","
+        + QString::number((int)position.y()) + "=" 
+        + QString::number(qRed(rgb));
+    ui.colorLabel->setText(str);
 }

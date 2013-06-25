@@ -2,9 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QtWidgets/QMainWindow>
-#include "ImageScene.h"
 #include "ui_mainwindow.h"
-
+#include "ImageScene.h"
+#include <qpoint.h>
+#include <qrgb.h>
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
@@ -17,8 +18,9 @@ public slots:
 
 private:
     Ui::MainWindowClass ui;
-    ImageScene* scene;
+    ImageScene *scene;
 
+    void onSceneMouseMoveEvent(QPointF position, QRgb rgb);
     void openImage(QString filename);
 };
 

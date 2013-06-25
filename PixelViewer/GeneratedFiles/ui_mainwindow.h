@@ -47,6 +47,7 @@ public:
     QLineEdit *uriLineEdit;
     QPushButton *referenceButton;
     QPushButton *openButton;
+    QLabel *colorLabel;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -158,6 +159,15 @@ public:
 
         horizontalLayout->addWidget(openButton);
 
+        colorLabel = new QLabel(groupBox);
+        colorLabel->setObjectName(QStringLiteral("colorLabel"));
+        colorLabel->setGeometry(QRect(530, 40, 191, 71));
+        QFont font;
+        font.setPointSize(22);
+        font.setBold(true);
+        font.setWeight(75);
+        colorLabel->setFont(font);
+        colorLabel->setTextFormat(Qt::PlainText);
 
         verticalLayout->addWidget(groupBox);
 
@@ -191,6 +201,7 @@ public:
         label->setText(QApplication::translate("MainWindowClass", "URI", 0));
         referenceButton->setText(QApplication::translate("MainWindowClass", "\345\217\202\347\205\247", 0));
         openButton->setText(QApplication::translate("MainWindowClass", "\351\226\213\343\201\217", 0));
+        colorLabel->setText(QApplication::translate("MainWindowClass", "TextLabel", 0));
     } // retranslateUi
 
 };

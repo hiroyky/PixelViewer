@@ -10,12 +10,15 @@ class ImageView : public QGraphicsView {
 public:
     ImageView(QWidget *parent = 0);
     void scaleReset();
-protected:
-    void wheelEvent(QWheelEvent *event);
-    //void paintEvent(QPaintEvent *event);
+    void setIsShowPixelValue(bool val);
+    bool getIsShowPixelValue();
 
+protected slots:
+    void wheelEvent(QWheelEvent *event);
+    //void mouseMoveEvent(QMouseEvent *event);
+    void paintEvent(QPaintEvent *event);
 private:
-    qreal scalemount;
+    bool isShowPixelValue;
 };
 
 #endif
