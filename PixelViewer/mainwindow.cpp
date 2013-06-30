@@ -5,11 +5,18 @@
 #include <qfiledialog.h>
 #include <boost\bind.hpp>
 #include <qtextcodec.h>
+#include "ColorMode.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent) {
 
         ui.setupUi(this);
+
+        ui.modeSelectComboBox->addItem("Gray", ColorMode::GRAY);
+        ui.modeSelectComboBox->addItem("R", ColorMode::RED);
+        ui.modeSelectComboBox->addItem("G", ColorMode::GREEN);
+        ui.modeSelectComboBox->addItem("B", ColorMode::BLUE);
+        ui.modeSelectComboBox->addItem("RGB", ColorMode::RGB);
 
         scene = new ImageScene();
         scene->onMouseMoveEvent = boost::bind(&MainWindow::onSceneMouseMoveEvent, this, _1, _2);
@@ -48,7 +55,33 @@ void MainWindow::openImage(QString filename) {
 
 void MainWindow::onSceneMouseMoveEvent(QPointF position, QRgb rgb) {
     if(ui.colorValuecheckBox->isChecked()) {
-        QString str = QString::number(qGray(rgb));
-		ui.colorLabel->setText(QTextCodec::codecForLocale()->toUnicode( "画素の値: ") + str);
+        QString str, numstr;
+        switch (ui.modeSelectComboBox->currentIndex())
+        {
+        case ColorMode::GRAY:
+            numstr = QString::number(qGray(rgb));
+            str = QTextCodec::codecForLocale()->toUnicode( "画素の値: ") + numstr;
+            break;
+        case ColorMode::RED:
+            numstr = QString::number(qRed(rgb));
+            str = QTextCodec::codecForLocale()->toUnicode( "画素の値(赤): ") + numstr;
+            break;
+        case ColorMode::GREEN:
+            numstr = QString::number(qGreen(rgb));
+            str = QTextCodec::codecForLocale()->toUnicode( "画素の値(緑): ") + numstr;
+            break;
+        case ColorMode::BLUE:
+            numstr = QString::number(qBlue(rgb));
+            str = QTextCodec::codecForLocale()->toUnicode( "画素の値(青): ") + numstr;
+            break;
+        case ColorMode::RGB:
+            numstr = QString::number(qRed(rgb)) + ", " + QString::number(qGreen(rgb)) + ", " + QString::number(qBlue(rgb));
+            str = QTextCodec::codecForLocale()->toUnicode( "赤, 緑, 青: ") + numstr;
+            break;
+        default:
+            break;
+        }
+
+		ui.colorLabel->setText(str);
     }
 }

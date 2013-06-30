@@ -80,4 +80,9 @@
   <ItemGroup>
     <ResourceCompile Include="PixelViewer.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ColorMode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

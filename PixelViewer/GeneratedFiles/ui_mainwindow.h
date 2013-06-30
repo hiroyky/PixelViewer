@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -50,6 +51,7 @@ public:
     QPushButton *openButton;
     QLabel *colorLabel;
     QCheckBox *colorValuecheckBox;
+    QComboBox *modeSelectComboBox;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -84,7 +86,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 831, 695));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 831, 689));
         sizePolicy.setHeightForWidth(scrollAreaWidgetContents->sizePolicy().hasHeightForWidth());
         scrollAreaWidgetContents->setSizePolicy(sizePolicy);
         verticalLayout_3 = new QVBoxLayout(scrollAreaWidgetContents);
@@ -159,7 +161,7 @@ public:
 
         colorLabel = new QLabel(groupBox);
         colorLabel->setObjectName(QStringLiteral("colorLabel"));
-        colorLabel->setGeometry(QRect(480, 20, 271, 71));
+        colorLabel->setGeometry(QRect(480, 20, 321, 71));
         QFont font;
         font.setPointSize(22);
         font.setBold(true);
@@ -169,6 +171,9 @@ public:
         colorValuecheckBox = new QCheckBox(groupBox);
         colorValuecheckBox->setObjectName(QStringLiteral("colorValuecheckBox"));
         colorValuecheckBox->setGeometry(QRect(470, 10, 75, 16));
+        modeSelectComboBox = new QComboBox(groupBox);
+        modeSelectComboBox->setObjectName(QStringLiteral("modeSelectComboBox"));
+        modeSelectComboBox->setGeometry(QRect(730, 70, 69, 22));
 
         verticalLayout_3->addWidget(groupBox);
 
@@ -182,7 +187,7 @@ public:
         MainWindowClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindowClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 853, 21));
+        menuBar->setGeometry(QRect(0, 0, 853, 24));
         MainWindowClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindowClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));

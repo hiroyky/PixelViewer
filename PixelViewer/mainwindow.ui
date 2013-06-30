@@ -43,7 +43,7 @@
            <x>0</x>
            <y>0</y>
            <width>831</width>
-           <height>695</height>
+           <height>689</height>
           </rect>
          </property>
          <property name="sizePolicy">
@@ -170,7 +170,7 @@
               <rect>
                <x>480</x>
                <y>20</y>
-               <width>271</width>
+               <width>321</width>
                <height>71</height>
               </rect>
              </property>
@@ -201,6 +201,16 @@
               <string>CheckBox</string>
              </property>
             </widget>
+            <widget class="QComboBox" name="modeSelectComboBox">
+             <property name="geometry">
+              <rect>
+               <x>730</x>
+               <y>70</y>
+               <width>69</width>
+               <height>22</height>
+              </rect>
+             </property>
+            </widget>
            </widget>
           </item>
          </layout>
@@ -217,7 +227,7 @@
      <x>0</x>
      <y>0</y>
      <width>853</width>
-     <height>21</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
