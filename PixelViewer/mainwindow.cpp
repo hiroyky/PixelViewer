@@ -1,9 +1,10 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include <QtGui>
 #include <qgraphicsitem.h>
 #include <qmessagebox.h>
 #include <qfiledialog.h>
 #include <boost\bind.hpp>
+#include <qtextcodec.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent) {
@@ -48,6 +49,6 @@ void MainWindow::openImage(QString filename) {
 void MainWindow::onSceneMouseMoveEvent(QPointF position, QRgb rgb) {
     if(ui.colorValuecheckBox->isChecked()) {
         QString str = QString::number(qGray(rgb));
-        ui.colorLabel->setText(str);
+		ui.colorLabel->setText(QTextCodec::codecForLocale()->toUnicode( "画素の値: ") + str);
     }
 }

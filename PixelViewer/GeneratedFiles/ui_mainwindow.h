@@ -84,7 +84,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 831, 533));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 831, 695));
         sizePolicy.setHeightForWidth(scrollAreaWidgetContents->sizePolicy().hasHeightForWidth());
         scrollAreaWidgetContents->setSizePolicy(sizePolicy);
         verticalLayout_3 = new QVBoxLayout(scrollAreaWidgetContents);
@@ -106,18 +106,14 @@ public:
 
         verticalLayout_3->addWidget(imageView);
 
-        scrollArea->setWidget(scrollAreaWidgetContents);
-
-        verticalLayout->addWidget(scrollArea);
-
-        groupBox = new QGroupBox(centralWidget);
+        groupBox = new QGroupBox(scrollAreaWidgetContents);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Minimum);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
         groupBox->setSizePolicy(sizePolicy2);
-        groupBox->setMinimumSize(QSize(0, 150));
+        groupBox->setMinimumSize(QSize(0, 100));
         groupBox_2 = new QGroupBox(groupBox);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
         groupBox_2->setGeometry(QRect(10, 20, 441, 57));
@@ -163,7 +159,7 @@ public:
 
         colorLabel = new QLabel(groupBox);
         colorLabel->setObjectName(QStringLiteral("colorLabel"));
-        colorLabel->setGeometry(QRect(530, 40, 191, 71));
+        colorLabel->setGeometry(QRect(480, 20, 271, 71));
         QFont font;
         font.setPointSize(22);
         font.setBold(true);
@@ -174,7 +170,11 @@ public:
         colorValuecheckBox->setObjectName(QStringLiteral("colorValuecheckBox"));
         colorValuecheckBox->setGeometry(QRect(470, 10, 75, 16));
 
-        verticalLayout->addWidget(groupBox);
+        verticalLayout_3->addWidget(groupBox);
+
+        scrollArea->setWidget(scrollAreaWidgetContents);
+
+        verticalLayout->addWidget(scrollArea);
 
 
         verticalLayout_2->addLayout(verticalLayout);
@@ -182,7 +182,7 @@ public:
         MainWindowClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindowClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 853, 24));
+        menuBar->setGeometry(QRect(0, 0, 853, 21));
         MainWindowClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindowClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -200,13 +200,13 @@ public:
 
     void retranslateUi(QMainWindow *MainWindowClass)
     {
-        MainWindowClass->setWindowTitle(QApplication::translate("MainWindowClass", "MainWindow", 0));
+        MainWindowClass->setWindowTitle(QApplication::translate("MainWindowClass", "Pixel Viewer", 0));
         groupBox->setTitle(QApplication::translate("MainWindowClass", "\350\250\255\345\256\232", 0));
         groupBox_2->setTitle(QApplication::translate("MainWindowClass", "Open", 0));
         label->setText(QApplication::translate("MainWindowClass", "URI", 0));
         referenceButton->setText(QApplication::translate("MainWindowClass", "\345\217\202\347\205\247", 0));
         openButton->setText(QApplication::translate("MainWindowClass", "\351\226\213\343\201\217", 0));
-        colorLabel->setText(QApplication::translate("MainWindowClass", "TextLabel", 0));
+        colorLabel->setText(QApplication::translate("MainWindowClass", "\347\224\273\347\264\240\343\201\256\345\200\244", 0));
         colorValuecheckBox->setText(QApplication::translate("MainWindowClass", "CheckBox", 0));
     } // retranslateUi
 
